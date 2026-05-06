@@ -1,0 +1,83 @@
+# python-agent-standards
+
+> **AurigaIT Python AI-SDLC Framework**
+> Skills, rules, and agent definitions that AI coding agents use to generate
+> consistent, production-quality Python code across all AurigaIT projects.
+
+Compatible with: **Claude Code · Cursor · Kiro · Windsurf · Gemini Code Assist · GitHub Copilot**
+
+---
+
+## What Is This?
+
+This repository is the shared engineering brain that every AI agent reads before touching your code.
+It encodes 18+ years of Python best practice into structured skill files that agents load as context.
+
+## Quick Setup
+
+```bash
+# Copy into your project root
+cp -r skills ./skills
+cp -r rules ./rules
+cp -r agents ./agents
+cp -r .claude ./.claude
+cp CLAUDE.md ./CLAUDE.md
+cp .cursorrules ./.cursorrules
+cp -r .cursor ./.cursor
+```
+
+Then tell the agent your framework in `CLAUDE.md` or your first prompt:
+
+```
+This project uses FastAPI with PostgreSQL on Python 3.11.
+requires-python = ">=3.11"
+Load skills/fastapi/SKILL.md as the primary framework skill.
+```
+
+## Claude Code Slash Commands
+
+| Command | Purpose |
+|---|---|
+| `/load-skill [framework]` | Load all common + framework skills |
+| `/new-endpoint METHOD path "description"` | Scaffold a complete endpoint with tests |
+| `/review [file]` | Standards audit — returns ✅ / ⚠️ / ❌ |
+| `/add-tests [file]` | Generate missing pytest tests |
+| `/migrate "description"` | Create and apply an Alembic migration |
+
+## File Guide
+
+| Path | Load when |
+|---|---|
+| `CLAUDE.md` | Always — master agent contract |
+| `skills/common/code-style.md` | Writing any Python |
+| `skills/common/folder-structure.md` | Starting a new module or project |
+| `skills/common/error-handling.md` | Writing error or exception logic |
+| `skills/common/logging.md` | Adding any logging |
+| `skills/common/security.md` | Auth, input validation, secrets |
+| `skills/common/testing.md` | Writing tests |
+| `skills/common/db-design.md` | Creating or modifying models |
+| `skills/common/performance.md` | Caching, async, N+1 prevention |
+| `skills/common/llm-patterns.md` | LLM client abstraction, prompt management |
+| `skills/fastapi/SKILL.md` | FastAPI projects |
+| `skills/django/SKILL.md` | Django projects |
+| `skills/drf/SKILL.md` | Django REST Framework projects |
+| `skills/flask/SKILL.md` | Flask projects |
+| `rules/api-design.md` | Designing or reviewing API endpoints |
+| `rules/git-workflow.md` | Branching, commits, PRs |
+| `agents/qa-agent.md` | Automated QA pipeline setup |
+
+## Contributing
+
+When you discover a new best practice or fix a gap:
+
+1. Update the relevant skill file.
+2. Open a PR with a clear description of what changed and why.
+3. Tag it `skills-update`.
+4. Post to the team Slack channel — other projects need to pull the update.
+
+Review and update skill files during each sprint retrospective.
+
+---
+
+**Owner:** AurigaIT Engineering Platform
+**Contact:** Nishant / Arpit / Deepika
