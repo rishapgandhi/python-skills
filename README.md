@@ -4,7 +4,7 @@
 > Skills, rules, and agent definitions that AI coding agents use to generate
 > consistent, production-quality Python code across all AurigaIT projects.
 
-Compatible with: **Claude Code · Cursor · Kiro · Windsurf · Gemini Code Assist · GitHub Copilot**
+Compatible with: **Claude Code · OpenAI Codex · Cursor · Kiro · Windsurf · Gemini CLI · Google Antigravity · GitHub Copilot**
 
 ---
 
@@ -12,6 +12,25 @@ Compatible with: **Claude Code · Cursor · Kiro · Windsurf · Gemini Code Assi
 
 This repository is the shared engineering brain that every AI agent reads before touching your code.
 It encodes 18+ years of Python best practice into structured skill files that agents load as context.
+
+## Multi-Tool Setup
+
+Every AI tool reads its own config file, but all reference the same `skills/` directory:
+
+| Tool | Config file | Auto-loaded? |
+|------|------------|:---:|
+| Claude Code | `CLAUDE.md` | ✅ |
+| OpenAI Codex | `AGENTS.md` | ✅ |
+| Kiro | `.kiro/steering/*.md` + `AGENTS.md` | ✅ |
+| Cursor | `.cursorrules` + `.cursor/rules/*.mdc` | ✅ |
+| Gemini CLI | `GEMINI.md` | ✅ |
+| Windsurf | `.windsurfrules` | ✅ |
+| Google Antigravity | `.agents/skills/*/SKILL.md` + `AGENTS.md` | ✅ |
+| GitHub Copilot | `.github/copilot-instructions.md` | ✅ |
+
+**Zero migration between tools** — open this repo in any supported tool and it works immediately.
+
+See `docs/ai-tool-compatibility.md` for full details on each tool's architecture.
 
 ## Quick Setup
 
@@ -22,8 +41,14 @@ cp -r rules ./rules
 cp -r agents ./agents
 cp -r .claude ./.claude
 cp CLAUDE.md ./CLAUDE.md
+cp AGENTS.md ./AGENTS.md
+cp GEMINI.md ./GEMINI.md
 cp .cursorrules ./.cursorrules
 cp -r .cursor ./.cursor
+cp .windsurfrules ./.windsurfrules
+cp -r .kiro ./.kiro
+cp -r .agents ./.agents
+cp -r .github ./.github
 ```
 
 Then tell the agent your framework in `CLAUDE.md` or your first prompt:

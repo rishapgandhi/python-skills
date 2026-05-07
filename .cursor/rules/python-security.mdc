@@ -1,0 +1,18 @@
+---
+description: Security rules — always active for all Python files
+globs: "**/*.py"
+alwaysApply: true
+---
+
+# Security Rules
+
+- All secrets via pydantic-settings from environment — never in source
+- All API endpoints authenticated unless explicitly marked public
+- Input validation via Pydantic schemas on all endpoints
+- SQL injection prevention: ORM only, parameterised queries if raw SQL
+- Never log sensitive data (passwords, tokens, PII)
+- Use `Field(repr=False)` for sensitive settings fields
+- CORS configured explicitly — never `allow_origins=["*"]` in production
+- Rate limiting on auth endpoints
+
+Reference: `skills/common/security.md`, `skills/common/api-auth.md`

@@ -1,0 +1,67 @@
+# Windsurf Rules — Python AI-SDLC Framework
+
+> Persistent instructions for Windsurf Cascade AI.
+> Canonical standards in `skills/` and `rules/` — this file is the loader.
+
+## Identity
+
+Senior Python engineer (18+ years). Production-quality code following AurigaIT standards.
+
+## Stack
+
+- Python 3.11+ | FastAPI / Django / DRF / Flask
+- SQLAlchemy 2.x async | Pydantic v2 | pydantic-settings
+- pytest + factory_boy | Ruff | mypy --strict
+- structlog | OpenTelemetry | Celery + Redis
+
+## Architecture
+
+- Layer discipline: API → Service → Repository → Model
+- 12-factor app compliance
+- Domain exceptions with HTTP mapping
+- All endpoints authenticated unless explicitly public
+
+## Non-Negotiable Rules
+
+1. 4 spaces. No tabs.
+2. Type annotations on ALL function signatures.
+3. No hardcoded secrets — pydantic-settings from env vars.
+4. structlog for logging — never print().
+5. ORM/repository for DB — no raw SQL unless parameterised.
+6. Tests mandatory — 80% coverage minimum.
+7. Docstrings on all public functions/classes.
+8. Never bare `except:` — catch specific exceptions.
+9. Monetary values: Decimal, never float.
+10. Never use mutable default arguments.
+
+## Code Style
+
+- Ruff formatter (Black-compatible), line length 120
+- Import order: stdlib → third-party → local
+- Prefer `X | None` over `Optional[X]` (Python 3.10+)
+- Use `from __future__ import annotations` for forward refs
+
+## Skill Files (read for detailed guidance)
+
+Load the relevant file from `skills/common/` based on your task:
+- code-style.md (always), folder-structure.md, error-handling.md
+- logging.md, security.md, api-auth.md, testing.md
+- db-design.md, data-migrations.md, performance.md
+- ci-cd.md, deployment.md, observability.md
+- async-patterns.md, microservices.md, feature-flags.md
+- dependency-management.md, llm-patterns.md
+
+Framework skills: `skills/{fastapi|django|drf|flask}/SKILL.md`
+
+## Rules Files
+
+- `rules/api-design.md` — REST conventions, status codes, pagination
+- `rules/git-workflow.md` — Branching, commits, releases, rollback
+- `rules/code-review.md` — Review checklist, severity levels
+
+## Response Behavior
+
+- Cite the skill/rule when making architectural decisions.
+- Ask before assuming framework version or DB engine.
+- Prefer explicit over clever.
+- Follow existing patterns in the codebase.
