@@ -50,21 +50,37 @@ Load skills/fastapi/SKILL.md as the primary framework skill.
 |---|---|
 | `CLAUDE.md` | Always — master agent contract |
 | `skills/common/code-style.md` | Writing any Python |
+| `skills/common/code-style-index.md` | Quick lookup — section map for code-style.md |
 | `skills/common/folder-structure.md` | Starting a new module or project |
 | `skills/common/error-handling.md` | Writing error or exception logic |
 | `skills/common/logging.md` | Adding any logging |
 | `skills/common/security.md` | Auth, input validation, secrets |
+| `skills/common/api-auth.md` | OAuth2, JWT, RBAC/ABAC, service-to-service auth |
 | `skills/common/testing.md` | Writing tests |
 | `skills/common/db-design.md` | Creating or modifying models |
+| `skills/common/data-migrations.md` | Zero-downtime migrations, backfills |
 | `skills/common/performance.md` | Caching, async, N+1 prevention |
 | `skills/common/llm-patterns.md` | LLM client abstraction, prompt management |
+| `skills/common/ci-cd.md` | Setting up pipelines, GitHub Actions |
+| `skills/common/deployment.md` | Docker, health checks, 12-factor |
+| `skills/common/observability.md` | Metrics, tracing, OpenTelemetry |
+| `skills/common/async-patterns.md` | Task queues, retries, events, DLQ |
+| `skills/common/microservices.md` | Service boundaries, inter-service communication |
+| `skills/common/feature-flags.md` | Gradual rollouts, flag lifecycle |
+| `skills/common/dependency-management.md` | Pinning, vulnerability scanning, updates |
 | `skills/fastapi/SKILL.md` | FastAPI projects |
 | `skills/django/SKILL.md` | Django projects |
 | `skills/drf/SKILL.md` | Django REST Framework projects |
 | `skills/flask/SKILL.md` | Flask projects |
 | `rules/api-design.md` | Designing or reviewing API endpoints |
-| `rules/git-workflow.md` | Branching, commits, PRs |
+| `rules/git-workflow.md` | Branching, commits, PRs, releases, rollback |
+| `rules/code-review.md` | Reviewing code — checklist, severity, feedback |
 | `agents/qa-agent.md` | Automated QA pipeline setup |
+| `docs/onboarding.md` | New developer onboarding |
+| `docs/incident-response.md` | On-call, severity, postmortems |
+| `docs/tech-debt.md` | Tracking and prioritizing tech debt |
+| `docs/adr/ADR-template.md` | Architecture decision records |
+| `examples/fastapi-app/` | Reference implementation |
 
 ## Contributing
 
@@ -80,4 +96,4 @@ Review and update skill files during each sprint retrospective.
 ---
 
 **Owner:** AurigaIT Engineering Platform
-**Contact:** Nishant / Arpit / Deepika
+**Contact:** Rishap / Ravi

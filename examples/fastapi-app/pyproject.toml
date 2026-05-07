@@ -1,0 +1,42 @@
+[project]
+name = "example-fastapi-app"
+version = "0.1.0"
+description = "Minimal FastAPI project implementing python-agent-standards"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.111.0",
+    "uvicorn[standard]==0.29.0",
+    "sqlalchemy[asyncio]==2.0.30",
+    "asyncpg==0.29.0",
+    "pydantic-settings==2.2.1",
+    "structlog==24.1.0",
+    "alembic==1.13.1",
+    "httpx==0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.2.0",
+    "pytest-asyncio==0.23.6",
+    "pytest-cov==5.0.0",
+    "factory-boy==3.3.0",
+    "httpx==0.27.0",
+    "ruff==0.4.4",
+    "mypy==1.10.0",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "A", "SIM"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = ["--cov=app", "--cov-report=term-missing", "--cov-fail-under=80"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
