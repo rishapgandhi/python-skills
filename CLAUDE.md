@@ -50,14 +50,24 @@ CLAUDE.md                         ← you are here (master context)
 skills/
   common/
     code-style.md                 ← PEP 8 full compliance + modern Python
+    code-style-index.md           ← Section map for targeted loading
     folder-structure.md           ← 5 project archetypes + layer contract
     error-handling.md             ← exception hierarchy + HTTP mapping
     logging.md                    ← structlog setup + field vocabulary
     security.md                   ← OWASP + auth + input validation
+    api-auth.md                   ← OAuth2, JWT, RBAC/ABAC, service-to-service
     testing.md                    ← pytest + factories + coverage rules
     db-design.md                  ← SQLAlchemy 2.x + Alembic + indexing
+    data-migrations.md            ← zero-downtime migrations, expand-contract
     performance.md                ← async, caching, N+1 prevention, pagination
     llm-patterns.md               ← prompt mgmt, LLM client abstraction, context
+    ci-cd.md                      ← GitHub Actions pipeline templates
+    deployment.md                 ← Docker, health checks, 12-factor, graceful shutdown
+    observability.md              ← OpenTelemetry, metrics, tracing, log correlation
+    async-patterns.md             ← Task queues, retries, DLQ, domain events
+    microservices.md              ← Service boundaries, communication, contracts
+    feature-flags.md              ← Gradual rollouts, flag lifecycle, cleanup
+    dependency-management.md      ← Pinning, vulnerability scanning, updates
   fastapi/SKILL.md
   django/SKILL.md
   drf/SKILL.md
@@ -65,11 +75,17 @@ skills/
 rules/
   api-design.md
   git-workflow.md
+  code-review.md                  ← Review checklist, severity, feedback
 agents/
   qa-agent.md
 docs/
   onboarding.md
-  adr/                            ← architecture decision records
+  incident-response.md            ← Severity, escalation, postmortems
+  tech-debt.md                    ← Tracking, prioritization, scheduling
+  adr/
+    ADR-template.md               ← Architecture decision record template
+examples/
+  fastapi-app/                    ← reference implementation
 ```
 
 ---

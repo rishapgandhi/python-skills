@@ -83,8 +83,108 @@ This framework is a living document. When you discover a new best practice or fi
 
 ---
 
+## First PR Workflow (Target: Day 2)
+
+### Day 1 — Setup & Context
+
+1. Clone the project repo and run the setup script.
+2. Read `CLAUDE.md` and `skills/common/folder-structure.md` to understand the architecture.
+3. Run the test suite locally — ensure everything passes.
+4. Read the last 5 merged PRs to understand team conventions.
+5. Pick a starter ticket (labelled `good-first-issue` or assigned by your buddy).
+
+### Day 2 — First PR
+
+1. Create a feature branch: `feature/TICKET-123-short-description`
+2. Implement the change following the skill files.
+3. Write tests (minimum: happy path + one edge case).
+4. Run locally: `ruff check . && mypy app/ --strict && pytest`
+5. Self-review your diff before pushing.
+6. Open PR with description: what, why, how to test.
+7. Request review from your assigned buddy.
+
+### First Week Checklist
+
+- [ ] Local dev environment running (Docker, DB, Redis)
+- [ ] First PR merged
+- [ ] Attended one standup
+- [ ] Read `rules/code-review.md` — understand review expectations
+- [ ] Read `docs/incident-response.md` — know the escalation path
+- [ ] Access to: Slack channels, Jira/Linear, CI dashboard, monitoring
+
+---
+
+## Mentoring Structure
+
+### Buddy System
+
+Every new developer is assigned a **buddy** (senior dev on the same team):
+
+| Buddy responsibility | Timeline |
+|---------------------|----------|
+| Pair on first PR | Day 1-2 |
+| Review all PRs for first 2 weeks | Week 1-2 |
+| Daily 15-min check-in | Week 1-2 |
+| Weekly 30-min check-in | Week 3-4 |
+| Available for questions async | Ongoing |
+
+### Buddy Selection Criteria
+
+- Same team, same project
+- At least 6 months tenure on the project
+- Volunteers (not assigned against will)
+
+### What the Buddy Does NOT Do
+
+- Performance evaluation
+- Task assignment
+- Escalation decisions
+
+---
+
+## Ramp-Up Expectations
+
+| Timeframe | Expected capability |
+|-----------|-------------------|
+| **Week 1** | Environment setup, first PR merged, understands project structure |
+| **Week 2** | Handles small bug fixes independently, writes tests |
+| **Week 4** | Delivers small features end-to-end (API + tests + docs) |
+| **Week 6** | Participates in code reviews, handles medium features |
+| **Week 8** | Fully autonomous on standard tasks, starts reviewing others' PRs |
+| **Month 3** | Contributes to architectural discussions, mentors newer joiners |
+
+### Signs of Healthy Ramp-Up
+
+- Asking questions (not staying stuck silently)
+- PRs getting smaller over time (learning to scope)
+- Fewer review comments per PR over time
+- Starting to catch issues in others' code reviews
+
+### Signs of Trouble (Lead should intervene)
+
+- No PR by end of Day 3
+- Same review feedback repeated across multiple PRs
+- Not asking questions (may be stuck or disengaged)
+- Scope creep on tickets (trying to do too much)
+
+---
+
+## Key Resources for New Developers
+
+| Resource | Purpose |
+|----------|---------|
+| `CLAUDE.md` | Master contract — read first |
+| `skills/common/code-style.md` | How we write Python |
+| `rules/code-review.md` | How we review code |
+| `rules/git-workflow.md` | Branching, commits, PRs |
+| `docs/adr/` | Why past decisions were made |
+| `examples/fastapi-app/` | Reference implementation |
+| `docs/incident-response.md` | What to do when things break |
+
+---
+
 ## Contact
 
-Python SDLC framework owner: **Your Name**
+Python SDLC framework owner: **Rishap / Ravi**
 Team: AurigaIT Engineering Platform
 Last Updated: May 2026

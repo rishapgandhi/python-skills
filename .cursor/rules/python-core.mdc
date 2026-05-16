@@ -1,0 +1,21 @@
+---
+description: Core Python standards — always active for all Python files
+globs: "**/*.py"
+alwaysApply: true
+---
+
+# Python Core Rules
+
+- 4 spaces indentation, no tabs
+- Full type annotations on all function signatures
+- Docstrings on all public functions/classes (Google style)
+- No hardcoded secrets — use pydantic-settings
+- structlog for logging — never print()
+- Never bare `except:` — catch specific exceptions
+- Never use mutable default arguments
+- Monetary values: Decimal, never float
+- Prefer `X | None` over `Optional[X]`
+- Use `from __future__ import annotations` for forward refs
+- Layer discipline: API → Service → Repository → Model
+
+Reference: `skills/common/code-style.md`

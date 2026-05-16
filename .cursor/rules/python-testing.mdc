@@ -1,0 +1,18 @@
+---
+description: Testing standards — auto-attached to test files
+globs: "tests/**/*.py"
+alwaysApply: false
+---
+
+# Testing Rules
+
+- pytest + factory_boy + pytest-asyncio
+- asyncio_mode = "auto"
+- Coverage minimum: 80% (`--cov-fail-under=80`)
+- Test files mirror source: `app/services/x.py` → `tests/unit/services/test_x.py`
+- Use factory_boy for test data — never hardcode inline
+- Descriptive names: `test_create_user_with_duplicate_email_raises_conflict`
+- Each test: one behavior, independent, no shared mutable state
+- Happy path + edge cases + error paths
+
+Reference: `skills/common/testing.md`

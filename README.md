@@ -4,7 +4,7 @@
 > Skills, rules, and agent definitions that AI coding agents use to generate
 > consistent, production-quality Python code across all AurigaIT projects.
 
-Compatible with: **Claude Code · Cursor · Kiro · Windsurf · Gemini Code Assist · GitHub Copilot**
+Compatible with: **Claude Code · OpenAI Codex · Cursor · Kiro · Windsurf · Gemini CLI · Google Antigravity · GitHub Copilot**
 
 ---
 
@@ -12,6 +12,25 @@ Compatible with: **Claude Code · Cursor · Kiro · Windsurf · Gemini Code Assi
 
 This repository is the shared engineering brain that every AI agent reads before touching your code.
 It encodes 18+ years of Python best practice into structured skill files that agents load as context.
+
+## Multi-Tool Setup
+
+Every AI tool reads its own config file, but all reference the same `skills/` directory:
+
+| Tool | Config file | Auto-loaded? |
+|------|------------|:---:|
+| Claude Code | `CLAUDE.md` | ✅ |
+| OpenAI Codex | `AGENTS.md` | ✅ |
+| Kiro | `.kiro/steering/*.md` + `AGENTS.md` | ✅ |
+| Cursor | `.cursorrules` + `.cursor/rules/*.mdc` | ✅ |
+| Gemini CLI | `GEMINI.md` | ✅ |
+| Windsurf | `.windsurfrules` | ✅ |
+| Google Antigravity | `.agents/skills/*/SKILL.md` + `AGENTS.md` | ✅ |
+| GitHub Copilot | `.github/copilot-instructions.md` | ✅ |
+
+**Zero migration between tools** — open this repo in any supported tool and it works immediately.
+
+See `docs/ai-tool-compatibility.md` for full details on each tool's architecture.
 
 ## Quick Setup
 
@@ -22,8 +41,14 @@ cp -r rules ./rules
 cp -r agents ./agents
 cp -r .claude ./.claude
 cp CLAUDE.md ./CLAUDE.md
+cp AGENTS.md ./AGENTS.md
+cp GEMINI.md ./GEMINI.md
 cp .cursorrules ./.cursorrules
 cp -r .cursor ./.cursor
+cp .windsurfrules ./.windsurfrules
+cp -r .kiro ./.kiro
+cp -r .agents ./.agents
+cp -r .github ./.github
 ```
 
 Then tell the agent your framework in `CLAUDE.md` or your first prompt:
@@ -50,21 +75,37 @@ Load skills/fastapi/SKILL.md as the primary framework skill.
 |---|---|
 | `CLAUDE.md` | Always — master agent contract |
 | `skills/common/code-style.md` | Writing any Python |
+| `skills/common/code-style-index.md` | Quick lookup — section map for code-style.md |
 | `skills/common/folder-structure.md` | Starting a new module or project |
 | `skills/common/error-handling.md` | Writing error or exception logic |
 | `skills/common/logging.md` | Adding any logging |
 | `skills/common/security.md` | Auth, input validation, secrets |
+| `skills/common/api-auth.md` | OAuth2, JWT, RBAC/ABAC, service-to-service auth |
 | `skills/common/testing.md` | Writing tests |
 | `skills/common/db-design.md` | Creating or modifying models |
+| `skills/common/data-migrations.md` | Zero-downtime migrations, backfills |
 | `skills/common/performance.md` | Caching, async, N+1 prevention |
 | `skills/common/llm-patterns.md` | LLM client abstraction, prompt management |
+| `skills/common/ci-cd.md` | Setting up pipelines, GitHub Actions |
+| `skills/common/deployment.md` | Docker, health checks, 12-factor |
+| `skills/common/observability.md` | Metrics, tracing, OpenTelemetry |
+| `skills/common/async-patterns.md` | Task queues, retries, events, DLQ |
+| `skills/common/microservices.md` | Service boundaries, inter-service communication |
+| `skills/common/feature-flags.md` | Gradual rollouts, flag lifecycle |
+| `skills/common/dependency-management.md` | Pinning, vulnerability scanning, updates |
 | `skills/fastapi/SKILL.md` | FastAPI projects |
 | `skills/django/SKILL.md` | Django projects |
 | `skills/drf/SKILL.md` | Django REST Framework projects |
 | `skills/flask/SKILL.md` | Flask projects |
 | `rules/api-design.md` | Designing or reviewing API endpoints |
-| `rules/git-workflow.md` | Branching, commits, PRs |
+| `rules/git-workflow.md` | Branching, commits, PRs, releases, rollback |
+| `rules/code-review.md` | Reviewing code — checklist, severity, feedback |
 | `agents/qa-agent.md` | Automated QA pipeline setup |
+| `docs/onboarding.md` | New developer onboarding |
+| `docs/incident-response.md` | On-call, severity, postmortems |
+| `docs/tech-debt.md` | Tracking and prioritizing tech debt |
+| `docs/adr/ADR-template.md` | Architecture decision records |
+| `examples/fastapi-app/` | Reference implementation |
 
 ## Contributing
 
@@ -80,4 +121,4 @@ Review and update skill files during each sprint retrospective.
 ---
 
 **Owner:** AurigaIT Engineering Platform
-**Contact:** Nishant / Arpit / Deepika
+**Contact:** Rishap / Ravi
