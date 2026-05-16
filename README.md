@@ -1,10 +1,13 @@
-# python-agent-standards
+# Python AI Coding Standards & Skills
 
-> **AurigaIT Python AI-SDLC Framework**
-> Skills, rules, and agent definitions that AI coding agents use to generate
-> consistent, production-quality Python code across all AurigaIT projects.
+> Production-quality Python rules, skills, and agent definitions for AI coding assistants.
+> One repo — works instantly with **Claude Code · Cursor · GitHub Copilot · Kiro · Windsurf · Gemini CLI · OpenAI Codex · Google Antigravity**.
 
-Compatible with: **Claude Code · OpenAI Codex · Cursor · Kiro · Windsurf · Gemini CLI · Google Antigravity · GitHub Copilot**
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![AI Tools](https://img.shields.io/badge/AI%20tools-8%20supported-purple.svg)](#multi-tool-setup)
+
+**Keywords:** Python coding standards, AI agent rules, Cursor rules, `.cursorrules`, `CLAUDE.md`, `AGENTS.md`, GitHub Copilot instructions, FastAPI best practices, Django standards, Flask conventions, AI-assisted development, Python best practices 2024
 
 ---
 
