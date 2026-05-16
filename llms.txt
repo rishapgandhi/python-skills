@@ -1,0 +1,21 @@
+# Python AI Coding Standards & Skills
+
+> Production-quality Python coding standards, skills, and agent definitions for AI coding assistants.
+
+## Overview
+
+This repository provides structured skill files that AI coding agents (Claude Code, Cursor, GitHub Copilot, Kiro, Windsurf, Gemini CLI, OpenAI Codex, Google Antigravity) use to generate consistent, production-quality Python code.
+
+## Skills
+
+- Code Style: skills/common/code-style.md
+- Testing: skills/common/testing.md
+- Security: skills/common/security.md
+- API Auth: skills/common/api-auth.md
+- Database Design: skills/common/db-design.md
+- Error Handling: skills/common/error-handling.md
+- Performance: skills/common/performance.md
+- FastAPI: skills/fastapi/SKILL.md
+- Django: skills/django/SKILL.md
+- DRF: skills/drf/SKILL.md
+- Flask: skills/flask/SKILL.md
